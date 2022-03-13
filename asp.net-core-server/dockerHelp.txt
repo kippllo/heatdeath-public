@@ -1,0 +1,55 @@
+https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-3.1#build-and-deploy-manually
+
+
+Steps to build:
+
+#1:
+	dotnet publish -c Release -o DockerPublished
+
+#2
+	Create a new Dockerfile.
+	(Note: This should be a text file named "Dockerfile" with no file extension.)
+
+#3
+	Put this code in the Docker file:
+	
+	FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+	WORKDIR /app
+	COPY DockerPublished/ ./
+	ENTRYPOINT ["dotnet", "BackendServer.dll"]
+
+#4
+	Build the docker file into a Docker Image by using:
+	
+	docker build .
+
+
+
+
+
+
+
+
+
+New Full Instructions:
+
+Full steps to make docker work with my backend code (at least locally):
+1. dotnet publish -c Release -o DockerPublished
+
+	Note: You might want to copy the "map" folder into "DockerPublished" folder at this step!
+
+2. Create a new “Dockerfile” (with no file extension) with this inside:
+	FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+	WORKDIR /app
+	COPY DockerPublished/ ./
+	ENTRYPOINT ["dotnet", "BackendServer.dll"]
+
+3. docker build .
+   or
+   docker build -t heatdeathBackend:v1.0 .
+
+4. docker run -p 64040:54040/tcp -p 64040:54040/udp [imageID]
+   or
+   docker run -p 54040:54040/tcp -p 54040:54040/udp [imageID]
+
+   Make sure the frontend game clients connect to the right port as specified by the left port number above. (Fore example the “64040” part of “64040:54040/tcp”).

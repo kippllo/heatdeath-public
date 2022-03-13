@@ -1,0 +1,2 @@
+For some reason when I built the Mac mono version and zipped it on windows.
+It would fail to run on Mac when unzipped. I worked around this by zipping the build folder/.app on my mac.

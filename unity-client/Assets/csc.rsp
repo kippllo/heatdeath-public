@@ -1,0 +1,5 @@
+#"For help see: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe"
+#" And: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/listed-alphabetically"
+#" And: https://docs.unity3d.com/Manual/dotnetProfileAssemblies.html"
+#" Comment help: https://answers.unity.com/questions/1118947/how-to-put-comments-in-the-smcsrsp-file-for-unity.html"
+-r:System.Net.Http.dll

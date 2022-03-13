@@ -1,0 +1,5 @@
+1. Fix the resolution not to change.
+2. Added JSON.Net 12.0.3 portable-net40+win8+wpa81+wp8+sl5
+3. Added "ServerInfo" class because iOS does not like dynamic objects using "ExpandoObject".
+4. Checked "Requires Persistent Wifi*" Under: Project Settings->Player->Setting for iOS->Other Settings->Configuration
+5. All Deserialize JSON classes must have a public constructor with no parameters. (JSON setting: "ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor" did not fix the problem alone. But it could probably work with a private parameterless constructor.) Note: Class attribute "[JsonObject]" is not required.

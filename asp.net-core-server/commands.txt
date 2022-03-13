@@ -1,0 +1,40 @@
+cd C:\Users\kippl\Documents\ASP.Net Core\gameBackend v0.4
+dotnet run
+
+cd C:\Users\kippl\Documents\ASP.Net Core\gameBackend v0.4\bin\Debug\netcoreapp2.2\publish
+dotnet gameBackendTest.dll
+
+
+
+(Help:
+https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish?tabs=netcore21
+https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+https://stackoverflow.com/questions/52421644/net-core-how-works-dotnet-publish-command
+
+Get rid of debug log help: https://stackoverflow.com/questions/37858312/dotnet-publish-doesn%C2%B4t-publish-correct-appsettings-env-environmentname-json
+Note to actually stop console logging I had to make a change in srartup.cs as shown here: https://weblog.west-wind.com/posts/2018/Dec/31/Dont-let-ASPNET-Core-Default-Console-Logging-Slow-your-App-down#where-does-default-logging-configuration-come-from
+)
+
+cd C:\Users\kippl\Projects\Rouge Art Online\Backend vX.XX
+dotnet publish -r win-x64 gameBackendTest.csproj --self-contained true
+or
+dotnet publish -r win-x64 -c Release --self-contained true
+
+
+
+For Pi:
+dotnet publish -r linux-arm -c Release --self-contained true
+(Not you must start the Pi server using: startServer.sh
+    And you must have the programs set with the correct permissions. That is both "startServer.sh" and the "gameBackendTest" that the shell file opens.
+    Help: https://github.com/aspnet/AspNetCore/issues/3378
+)
+Linux CPU Priority Help: https://askubuntu.com/questions/656771/process-niceness-vs-priority
+
+
+
+
+Run these builds commands for every release (See: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog#linux-rids):
+dotnet publish -r win-x64 -c Release --self-contained true
+dotnet publish -r linux-x64 -c Release --self-contained true
+dotnet publish -r linux-arm -c Release --self-contained true
+dotnet publish -r osx-x64 -c Release --self-contained true

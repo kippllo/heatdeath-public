@@ -1,0 +1,16 @@
+1. Stable Release builds should have a round number with at most two digits as the last number place like:
+    v0.4.11
+
+2. Dev builds should start on the next number from the last Stable Release and count up by adding "d0", next would be "d1".
+    Example (if the last Stable Release was "v0.4.11"):
+    v0.4.12d0,
+    v0.4.12d1,
+    v0.4.12d2,
+    ...
+    v0.4.12d14,
+
+3. When you ready ready to take a dev build and turn it into a stable release, just take the "d" part off.
+    Example:
+    "v0.4.12d14" becomes "v0.4.12" on release.
+
+4. Don't forget to update the server's version to match the new release version!

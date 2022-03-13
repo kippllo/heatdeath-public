@@ -1,0 +1,6 @@
+Run the below command in the terminal, in the backend's working directory to give the application the needed permission to run:
+chmod +x ./BackendServer
+
+
+Then you can start the server with the following command:
+./BackendServer

@@ -1,0 +1,15 @@
+{
+    "port":54040,
+    "simultaneousRounds":10,
+    "connectionsLimit":15,
+    "lobbyWaitTime":60.0,
+    "connectionDropTime":1.0,
+    "initialConnectionGracePeriod":35.0,
+    "objRenderDist":40.0,
+    "zoneTime":160.0,
+    "zoneTimeScale":0.75,
+    "FillWithAI":true,
+    "LANProfile":false,
+    "clientVer":"0.4.4",
+    "maintenanceMessage":"Welcome to the Heatdeath mobile beta! I hope you enjoy the game. If you have any feedback or suggestions please reach out to me at: support@keybored.net         Thanks! -kippllo"
+}

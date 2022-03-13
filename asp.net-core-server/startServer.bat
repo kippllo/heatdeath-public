@@ -1,0 +1,2 @@
+call dotnet run
+pause
